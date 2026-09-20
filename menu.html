@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menú · DINTEL Café</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+            padding: 25px 15px 40px;
+        }
+
+        .contenedor {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        /* LOGO */
+
+        .logo-dintel {
+            width: 330px;
+            max-width: 95%;
+            height: auto;
+            display: block;
+            margin: 5px auto 15px;
+
+            filter:
+                drop-shadow(0 0 8px rgba(220, 30, 45, 0.35))
+                drop-shadow(0 0 20px rgba(180, 20, 30, 0.18));
+        }
+
+        /* TITULO */
+
+        .titulo {
+            text-align: center;
+            font-size: 24px;
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-top: 8px;
+        }
+
+        .linea {
+            width: 80px;
+            height: 4px;
+            background: #d92332;
+            margin: 25px auto 35px;
+
+            box-shadow:
+                0 0 8px rgba(217, 35, 50, 0.7);
+        }
+
+        /* CATEGORÍAS */
+
+        .categoria {
+            margin-top: 32px;
+        }
+
+        .categoria-titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 20px;
+            margin-bottom: 15px;
+
+            color: white;
+        }
+
+        .categoria-titulo::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #333;
+        }
+
+        /* PRODUCTOS */
+
+        .producto {
+            background: #151515;
+            border: 1px solid #303030;
+            border-radius: 15px;
+
+            padding: 16px 18px;
+            margin: 10px 0;
+
+            transition: 0.2s;
+        }
+
+        .producto:hover {
+            border-color: #8f1c27;
+            transform: translateY(-1px);
+        }
+
+        .fila {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .nombre {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .precio {
+            color: #ff3345;
+            font-size: 17px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .descripcion {
+            color: #888;
+            font-size: 13px;
+            margin-top: 7px;
+            line-height: 1.4;
+        }
+
+        /* VOLVER */
+
+        .volver {
+            display: block;
+
+            margin: 40px auto 30px;
+            padding: 15px;
+
+            max-width: 300px;
+
+            border: 1px solid #555;
+            border-radius: 15px;
+
+            color: white;
+            text-decoration: none;
+
+            text-align: center;
+            font-weight: bold;
+
+            background: #151515;
+
+            transition: 0.2s;
+        }
+
+        .volver:hover {
+            border-color: #d92332;
+            background: #25090c;
+        }
+
+        /* ON */
+
+        .separador {
+            border-top: 1px solid #333;
+            margin-top: 45px;
+        }
+
+        .credito {
+            text-align: center;
+            margin-top: 22px;
+
+            color: #777;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .logo-on {
+            display: block;
+
+            width: 190px;
+            max-width: 65%;
+
+            height: auto;
+
+            margin: 12px auto 0;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 500px) {
+
+            .logo-dintel {
+                width: 330px;
+            }
+
+            .titulo {
+                font-size: 22px;
+            }
+
+            .producto {
+                padding: 15px;
+            }
+
+            .nombre,
+            .precio {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- LOGO DINTEL -->
+
+    <img
+        class="logo-dintel"
+        src="logo_dintel_transparente.png"
+        alt="DINTEL Café Bar"
+    >
+
+
+    <div class="titulo">
+        Nuestro menú
+    </div>
+
+    <div class="subtitulo">
+        CAFÉ · BAR · DE PASO
+    </div>
+
+    <div class="linea"></div>
+
+
+    <!-- CAFETERÍA -->
+
+    <div class="categoria">
+
+        <div class="categoria-titulo">
+            ☕ Cafetería
+        </div>
+
+        <div class="producto">
+
+            <div class="fila">
+                <div class="nombre">
+                    Café con leche
+                </div>
+
+                <div class="precio">
+                    $ 2.500
+                </div>
+            </div>
+
+            <div class="descripcion">
+                Café acompañado de leche caliente.
+            </div>
+
+        </div>
+
+
+        <div class="producto">
+
+            <div class="fila">
+                <div class="nombre">
+                    Café espresso
+                </div>
+
+                <div class="precio">
+                    $ 2.000
+                </div>
+            </div>
+
+            <div class="descripcion">
+                Café espresso tradicional.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMIDAS -->
+
+    <div class="categoria">
+
+        <div class="categoria-titulo">
+            🍔 Comidas
+        </div>
+
+        <div class="producto">
+
+            <div class="fila">
+                <div class="nombre">
+                    Hamburguesa completa
+                </div>
+
+                <div class="precio">
+                    $ 8.500
+                </div>
+            </div>
+
+            <div class="descripcion">
+                Hamburguesa completa acompañada de papas.
+            </div>
+
+        </div>
+
+
+        <div class="producto">
+
+            <div class="fila">
+                <div class="nombre">
+                    Lomito completo
+                </div>
+
+                <div class="precio">
+                    $ 9.500
+                </div>
+            </div>
+
+            <div class="descripcion">
+                Lomito completo acompañado de papas fritas.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BEBIDAS -->
+
+    <div class="categoria">
+
+        <div class="categoria-titulo">
+            🍺 Bebidas
+        </div>
+
+        <div class="producto">
+
+            <div class="fila">
+                <div class="nombre">
+                    Cerveza
+                </div>
+
+                <div class="precio">
+                    $ 4.000
+                </div>
+            </div>
+
+            <div class="descripcion">
+                Consultar variedades disponibles.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VOLVER -->
+
+    <a class="volver" href="index.html">
+        ← Volver
+    </a>
+
+
+    <!-- ON -->
+
+    <div class="separador"></div>
+
+    <div class="credito">
+        UNA SOLUCIÓN DE
+    </div>
+
+    <img
+        class="logo-on"
+        src="logo_on_transparente.png"
+        alt="ON Soporte Informático"
+    >
+
+</div>
+
+</body>
+
+</html>
