@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>DINTEL Café · Bar</title>
-
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -28,21 +24,18 @@
         }
 
         /* LOGO DINTEL */
-
         .logo-dintel {
             width: 390px;
             max-width: 100%;
             height: auto;
             display: block;
             margin: 5px auto 15px;
-
             filter:
                 drop-shadow(0 0 8px rgba(220, 30, 45, 0.35))
                 drop-shadow(0 0 22px rgba(180, 20, 30, 0.18));
         }
 
         /* PRESENTACIÓN */
-
         .bienvenidos {
             font-size: 24px;
             color: #ddd;
@@ -62,35 +55,27 @@
             height: 4px;
             background: #d92332;
             margin: 0 auto 30px;
-
-            box-shadow:
-                0 0 8px rgba(217, 35, 50, 0.7);
+            box-shadow: 0 0 8px rgba(217, 35, 50, 0.7);
         }
 
         /* BOTONES */
-
         .boton {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             width: 100%;
             min-height: 78px;
-
             margin: 14px 0;
             padding: 12px 20px;
-
             border-radius: 20px;
-
             background: #151515;
             border: 2px solid #333;
-
             color: white;
             text-decoration: none;
-
+            font-family: inherit;
             font-size: 19px;
             font-weight: bold;
-
+            cursor: pointer;
             transition: all 0.2s ease;
         }
 
@@ -100,57 +85,30 @@
         }
 
         /* MENU */
-
         .boton.menu {
-            background:
-                linear-gradient(
-                    90deg,
-                    #35090d,
-                    #160909
-                );
-
+            background: linear-gradient(90deg, #35090d, #160909);
             border-color: #a51d29;
-
-            box-shadow:
-                0 0 15px rgba(180, 20, 30, 0.12);
+            box-shadow: 0 0 15px rgba(180, 20, 30, 0.12);
         }
 
         /* ICONOS */
-
         .icono {
             width: 52px;
             height: 52px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             border-radius: 50%;
-
             font-size: 25px;
-
             flex-shrink: 0;
         }
 
-        .menu .icono {
-            background: #c92130;
-        }
-
-        .instagram .icono {
-            background: #e1306c;
-        }
-
-        .whatsapp .icono {
-            background: #16c765;
-        }
-
-        .ubicacion .icono {
-            background: #e52d3d;
-        }
-
-        .mercadopago .icono {
-            background: #168de2;
-        }
+        .menu .icono { background: #c92130; }
+        .mercadopago .icono { background: #168de2; }
+        .resena .icono { background: #f59e0b; }
+        .whatsapp .icono { background: #16c765; }
+        .instagram .icono { background: #e1306c; }
+        .ubicacion .icono { background: #e52d3d; }
 
         .texto {
             flex: 1;
@@ -163,8 +121,98 @@
             font-weight: normal;
         }
 
-        /* PIE */
+        /* PANEL MEDIOS DE PAGO */
+        .medios-pago {
+            margin: 10px 0 18px;
+            padding: 22px 18px;
+            border-radius: 20px;
+            background: #121212;
+            border: 2px solid #168de2;
+            box-shadow: 0 0 18px rgba(22, 141, 226, 0.18);
+            text-align: center;
+        }
 
+        .medios-pago[hidden] {
+            display: none;
+        }
+
+        .medios-pago h2 {
+            margin: 0 0 12px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .titular {
+            color: #aaa;
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        .alias {
+            font-size: 19px;
+            font-weight: 700;
+            padding: 12px;
+            margin: 0;
+            background: #080808;
+            border: 1px dashed #168de2;
+            border-radius: 12px;
+            color: #4db2ff;
+            letter-spacing: 0.5px;
+        }
+
+        .copiar-alias {
+            display: block;
+            width: 100%;
+            min-height: 50px;
+            margin-top: 14px;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: #168de2;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .copiar-alias:hover {
+            background: #1174bd;
+        }
+
+        .enviar-comprobante {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 46px;
+            margin-top: 10px;
+            padding: 10px 16px;
+            border: 1px solid #16c765;
+            border-radius: 12px;
+            background: transparent;
+            color: #16c765;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .enviar-comprobante:hover {
+            background: #16c765;
+            color: #080808;
+        }
+
+        .estado-copia {
+            min-height: 18px;
+            margin: 10px 0 0;
+            color: #4db2ff;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* PIE */
         .separador {
             margin-top: 65px;
             border-top: 1px solid #333;
@@ -186,187 +234,146 @@
         }
 
         /* CELULAR */
-
         @media (max-width: 500px) {
-
-            body {
-                padding: 20px 15px;
-            }
-
-            .logo-dintel {
-                width: 360px;
-            }
-
-            .bienvenidos {
-                font-size: 22px;
-            }
-
+            body { padding: 20px 15px; }
+            .logo-dintel { width: 360px; }
+            .bienvenidos { font-size: 22px; }
             .boton {
                 min-height: 72px;
                 font-size: 17px;
                 padding: 10px 18px;
             }
-
             .icono {
                 width: 48px;
                 height: 48px;
                 font-size: 22px;
             }
-
-            .flecha {
-                font-size: 30px;
-            }
-
-            .logo-on {
-                width: 210px;
-            }
+            .flecha { font-size: 30px; }
+            .logo-on { width: 210px; }
         }
-
     </style>
-
 </head>
-
 <body>
 
 <div class="contenedor">
 
     <!-- LOGO DINTEL -->
-
-    <img
-        class="logo-dintel"
-        src="logo_dintel_transparente.png"
-        alt="DINTEL Café Bar"
-    >
-
+    <img class="logo-dintel" src="logo_dintel_transparente.png" alt="DINTEL Café Bar">
 
     <!-- PRESENTACIÓN -->
-
-    <div class="bienvenidos">
-        Bienvenidos
-    </div>
-
-    <div class="frase">
-        BUEN CAFÉ, MEJORES MOMENTOS
-    </div>
-
+    <div class="bienvenidos">Bienvenidos</div>
+    <div class="frase">BUEN CAFÉ, MEJORES MOMENTOS</div>
     <div class="linea"></div>
 
-
     <!-- MENÚ -->
-
     <a class="boton menu" href="menu.html">
-
         <div class="icono">🍔</div>
-
-        <div class="texto">
-            Ver menú
-        </div>
-
-        <div class="flecha">
-            ›
-        </div>
-
+        <div class="texto">Ver menú</div>
+        <div class="flecha">›</div>
     </a>
 
+    <!-- MEDIOS DE PAGO -->
+    <button type="button" class="boton mercadopago" id="abrir-medios-pago" aria-expanded="false" aria-controls="medios-pago">
+        <div class="icono">▣</div>
+        <div class="texto">Medios de pago</div>
+        <div class="flecha">›</div>
+    </button>
 
-    <!-- INSTAGRAM -->
+    <section class="medios-pago" id="medios-pago" aria-labelledby="titulo-medios-pago" hidden>
+        <h2 id="titulo-medios-pago">Transferencia / Mercado Pago</h2>
+        <!-- EDITAR TITULAR Y ALIAS CUANDO CONFIRMEN -->
+        <p class="titular">Titular: Dintel Café Bar</p>
+        <p class="alias" id="alias-pago">dintel.cafebar.mp</p>
+        <button class="copiar-alias" id="copiar-alias" type="button">Copiar Alias</button>
+        <a href="https://wa.me/5493364196254?text=Hola!%20Te%20env%C3%ADo%20el%20comprobante%20de%20transferencia." target="_blank" rel="noopener noreferrer" class="enviar-comprobante">Enviar Comprobante por WhatsApp ↗</a>
+        <p class="estado-copia" id="estado-copia" role="status" aria-live="polite"></p>
+    </section>
 
-    <a
-        class="boton instagram"
-        href="https://www.instagram.com/dintelcafebar/"
-        target="_blank"
-    >
-
-        <div class="icono">◎</div>
-
-        <div class="texto">
-            Instagram
-        </div>
-
-        <div class="flecha">
-            ›
-        </div>
-
+    <!-- RESEÑA GOOGLE -->
+    <!-- REEMPLAZAR HREF POR EL LINK DIRECTO A RESEÑAS DE GOOGLE -->
+    <a class="boton resena" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="icono">★</div>
+        <div class="texto">Dejanos tu reseña</div>
+        <div class="flecha">›</div>
     </a>
-
 
     <!-- WHATSAPP -->
-
-    <a
-        class="boton whatsapp"
-        href="https://wa.me/5493364196254"
-        target="_blank"
-    >
-
+    <a class="boton whatsapp" href="https://wa.me/5493364196254" target="_blank" rel="noopener noreferrer">
         <div class="icono">☏</div>
-
-        <div class="texto">
-            WhatsApp
-        </div>
-
-        <div class="flecha">
-            ›
-        </div>
-
+        <div class="texto">WhatsApp</div>
+        <div class="flecha">›</div>
     </a>
 
+    <!-- INSTAGRAM -->
+    <a class="boton instagram" href="https://www.instagram.com/dintelcafebar/" target="_blank" rel="noopener noreferrer">
+        <div class="icono">◎</div>
+        <div class="texto">Instagram</div>
+        <div class="flecha">›</div>
+    </a>
 
     <!-- UBICACIÓN -->
-
-    <a
-        class="boton ubicacion"
-        href="#"
-    >
-
+    <!-- REEMPLAZAR HREF POR EL LINK DE GOOGLE MAPS DEL LOCAL -->
+    <a class="boton ubicacion" href="#" target="_blank" rel="noopener noreferrer">
         <div class="icono">●</div>
-
-        <div class="texto">
-            Cómo llegar
-        </div>
-
-        <div class="flecha">
-            ›
-        </div>
-
+        <div class="texto">Cómo llegar</div>
+        <div class="flecha">›</div>
     </a>
-
-
-    <!-- MERCADO PAGO -->
-
-    <a
-        class="boton mercadopago"
-        href="#"
-    >
-
-        <div class="icono">▣</div>
-
-        <div class="texto">
-            Pagar con Mercado Pago
-        </div>
-
-        <div class="flecha">
-            ›
-        </div>
-
-    </a>
-
 
     <!-- PIE ON -->
-
     <div class="separador"></div>
-
-    <div class="credito">
-        UNA SOLUCIÓN DE
-    </div>
-
-    <img
-        class="logo-on"
-        src="logo_on_transparente.png"
-        alt="ON Soporte Informático"
-    >
+    <div class="credito">UNA SOLUCIÓN DE</div>
+    <img class="logo-on" src="logo_on_transparente.png" alt="ON Soporte Informático">
 
 </div>
 
-</body>
+<script>
+const botonMediosPago = document.getElementById("abrir-medios-pago");
+const panelMediosPago = document.getElementById("medios-pago");
+const botonCopiar = document.getElementById("copiar-alias");
+const textoAlias = document.getElementById("alias-pago").textContent.trim();
+const estadoCopia = document.getElementById("estado-copia");
 
+function abrirPanelPago() {
+    botonMediosPago.setAttribute("aria-expanded", "true");
+    panelMediosPago.hidden = false;
+    panelMediosPago.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+botonMediosPago.addEventListener("click", () => {
+    const abierto = botonMediosPago.getAttribute("aria-expanded") === "true";
+    botonMediosPago.setAttribute("aria-expanded", String(!abierto));
+    panelMediosPago.hidden = abierto;
+    if (!abierto) panelMediosPago.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+
+if (window.location.hash === "#medios-pago") {
+    abrirPanelPago();
+}
+
+botonCopiar.addEventListener("click", async () => {
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(textoAlias);
+        } else {
+            const campo = document.createElement("textarea");
+            campo.value = textoAlias;
+            campo.setAttribute("readonly", "");
+            campo.style.position = "fixed";
+            campo.style.opacity = "0";
+            document.body.appendChild(campo);
+            campo.select();
+            const copiado = document.execCommand("copy");
+            campo.remove();
+            if (!copiado) throw new Error("No se pudo copiar");
+        }
+        estadoCopia.textContent = "¡Listo! Ya podés pegarlo en tu billetera virtual.";
+        botonCopiar.textContent = "✓ Alias copiado";
+        setTimeout(() => { botonCopiar.textContent = "Copiar Alias"; }, 3000);
+    } catch (error) {
+        estadoCopia.textContent = "No se pudo copiar automáticamente. Mantené presionado el alias para copiarlo.";
+    }
+});
+</script>
+
+</body>
 </html>
